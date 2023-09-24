@@ -15,16 +15,13 @@ for /L %%i in (3,1,15) do (
         echo Processing !file!
         
 		rem Build the command and store it in a variable
-		set "command=!python_exe! run.py -s !file_img! -t !file! -o !file_out! --frame-processor face_swapper face_enhancer --keep-fps --face-analyser-gender female --face-recognition many --temp-frame-format jpg --output-video-quality 80 --execution-providers cuda --execution-thread-count 32 --execution-queue-count 4 --skip-download --headless" 
+		set "command=!python_exe! run.py -s !file_img! -t !file! -o !file_out! --frame-processor face_swapper face_enhancer_pro_ffhq --keep-fps --face-analyser-gender female --face-recognition many --temp-frame-format jpg --output-video-quality 80 --execution-providers cuda --execution-thread-count 32 --execution-queue-count 4 --skip-download --headless" 
         
 		rem Print the command
         echo command: !command!
         
         rem Execute the command
         !command!
-		
-		rem 30 seconds delay
-		timeout /t 15
     ) else (
         echo File !file! not found. Moving to the next file.
     )
