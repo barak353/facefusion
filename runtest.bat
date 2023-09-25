@@ -5,10 +5,10 @@ rem Set the path to your Python interpreter
 set python_exe=python
 
 rem Loop through files named "vid1", "vid2", etc.
-for /L %%i in (1,1,50) do (
-    set "file=C:\Users\User\Documents\GitHub\content\vid%%i.mp4"
-    set "file_out=C:\Users\User\Documents\GitHub\content\out\vid%%i_out.mp4"
-    set "file_img=C:\Users\User\Documents\GitHub\content\img.jpg"
+for /L %%i in (0,1,2) do (
+    set "file="C:\Users\User\Documents\GitHub\facefusion1_2_1\dynaris%%i.mp4""
+    set "file_out="C:\Users\User\Documents\GitHub\facefusion1_2_1\dynaris%%i_out.mp4""
+    set "file_img="C:\Users\User\Documents\GitHub\facefusion1_2_1\angelina.jpg""
 	
     rem Check if the file exists
     if exist !file! (

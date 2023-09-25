@@ -17,7 +17,7 @@ import facefusion.globals
 from facefusion import wording
 from facefusion.vision import detect_fps
 
-TEMP_DIRECTORY_PATH = os.path.join(tempfile.gettempdir(), 'facefusion')
+TEMP_DIRECTORY_PATH = os.path.join("C:\\Users\\User\Documents\GitHub", 'TEMP')
 TEMP_OUTPUT_VIDEO_NAME = 'temp.mp4'
 
 # monkey patch ssl
@@ -100,11 +100,13 @@ def restore_audio(target_path : str, output_path : str) -> bool:
 
 def get_temp_frame_paths(target_path : str) -> List[str]:
 	temp_frames_pattern = get_temp_frames_pattern(target_path, '*')
+	print(f"get_temp_frame_paths - target_path={target_path}|temp_frames_pattern={temp_frames_pattern}")
 	return sorted(glob.glob(temp_frames_pattern))
 
 
 def get_temp_frames_pattern(target_path : str, temp_frame_prefix : str) -> str:
 	temp_directory_path = get_temp_directory_path(target_path)
+	print(f"get_temp_frames_pattern - temp_directory_path={temp_directory_path}|temp_frame_prefix={temp_frame_prefix}|facefusion.globals.temp_frame_format={facefusion.globals.temp_frame_format}")
 	return os.path.join(temp_directory_path, temp_frame_prefix + '.' + facefusion.globals.temp_frame_format)
 
 
@@ -115,6 +117,7 @@ def get_temp_directory_path(target_path : str) -> str:
 
 def get_temp_output_video_path(target_path : str) -> str:
 	temp_directory_path = get_temp_directory_path(target_path)
+	print(f"get_temp_output_video_path - target_path={target_path}|TEMP_OUTPUT_VIDEO_NAME={TEMP_OUTPUT_VIDEO_NAME}|temp_directory_path={temp_directory_path}")
 	return os.path.join(temp_directory_path, TEMP_OUTPUT_VIDEO_NAME)
 
 

@@ -5,7 +5,7 @@ rem Set the path to your Python interpreter
 set python_exe=python
 
 rem Loop through files named "vid1", "vid2", etc.
-for /L %%i in (1,1,50) do (
+for /L %%i in (52,1,100) do (
     set "file=C:\Users\User\Documents\GitHub\content\vid%%i.mp4"
     set "file_out=C:\Users\User\Documents\GitHub\content\out\vid%%i_out.mp4"
     set "file_img=C:\Users\User\Documents\GitHub\content\img.jpg"
