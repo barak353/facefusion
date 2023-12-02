@@ -181,15 +181,23 @@ def is_directory(directory_path : str) -> bool:
 
 def is_image(image_path : str) -> bool:
 	if is_file(image_path):
-		mimetype = filetype.guess(image_path).mime
-		return bool(mimetype and mimetype.startswith('image/'))
+		mimetype = filetype.guess(image_path)
+		if mimetype != None:
+			mimetype = mimetype.mime
+			return bool(mimetype and mimetype.startswith('image/'))
+		else:
+			return bool(int(detect_fps(image_path) or 0) > 0)
 	return False
 
 
 def is_video(video_path : str) -> bool:
 	if is_file(video_path):
-		mimetype = filetype.guess(video_path).mime
-		return bool(mimetype and mimetype.startswith('video/'))
+		mimetype = filetype.guess(video_path)
+		if mimetype != None:
+			mimetype = mimetype.mime
+			return bool(mimetype and mimetype.startswith('video/'))
+		else:
+			return bool(int(detect_fps(video_path) or 0) > 0)
 	return False
 
 
