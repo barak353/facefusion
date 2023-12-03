@@ -80,8 +80,8 @@ def analyse_frame(frame : Frame) -> bool:
 @lru_cache(maxsize = None)
 def analyse_image(image_path : str) -> bool:
 	frame = read_image(image_path)
-	return analyse_frame(frame)
-
+	#return analyse_frame(frame)
+	return analyse_frame(frame) if frame else True
 
 @lru_cache(maxsize = None)
 def analyse_video(video_path : str, start_frame : int, end_frame : int) -> bool:
