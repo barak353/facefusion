@@ -31,6 +31,9 @@ REM Update the facefusion.ini file
 
 MOVE /Y facefusion_new.ini facefusion.ini
 
+REM Display the output file name
+ECHO Processing output file: !new_output_path!
+
 REM Run the command
 python facefusion.py headless-run
 
