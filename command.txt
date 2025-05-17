@@ -1,0 +1,2 @@
+cd C:\Users\User\Documents\GitHub\facefusion_3_2_0
+conda activate facefusion_3_2_0
