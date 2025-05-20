@@ -2,9 +2,9 @@
 SETLOCAL EnableDelayedExpansion
 
 REM Set the starting index
-SET index=107532
+SET index=107548
 REM Set the ending index (adjust as needed)
-SET end_index=200000
+SET end_index=999999
 
 :loop
 REM Construct the new target_path and new_output_path
